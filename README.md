@@ -23,5 +23,5 @@ où hyperparameters est la liste de paramètres d'entrainement pour le réseau d
 
 # Enregistrement du modèle Pytorch au format csv
 
-registrer_to_csv(pytorch_model)
+register_to_csv(pytorch_model)
 
