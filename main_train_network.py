@@ -8,18 +8,17 @@ def cost_fn(prediction, true):
     return ((prediction - true) ** 2).sum()
 
 
-def train_network(inputs, outputs):
+def train_network(inputs, outputs, dataset_name: str, epochs: int):
     model = NeuralNetwork()
     X = from_numpy(inputs)
     y = from_numpy(outputs)
-    model.train_model(X, y, cost_fn=cost_fn, epochs=10)
-    model.register_to_csv("network_v1_1000,_10.csv")
+    model.train_model(X, y, cost_fn=cost_fn, epochs=epochs)
+    model.register_to_csv(f"models/network_{dataset_name}_{epochs}.csv")
 
-def main_train_network():
-    print('')
-    inputs, outputs = get_dataset_v1(1000)
-    print('here')
-    train_network(inputs, outputs)
+def main_train_network(version: int = 1, N: int = 100, epochs: int = 100):
+    inputs, outputs = get_dataset_v1(N)
+    dataset_name = f'v{version}_{N}'
+    train_network(inputs, outputs, dataset_name, epochs)
 
 
 if __name__ == '__main__':
