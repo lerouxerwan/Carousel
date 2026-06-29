@@ -10,14 +10,18 @@ input, output = get_dataset(N, K, ubar, R)
 
 où input est de dimension (N,4) où pour chaque ligne on a: x, y, cos(theta), sin(theta) 
 
+et output est de dimension (N,2) où pour chaque ligne on a: u1, u2 
+
 Cette fonction "get_dataset" tire N fois aléatoirement un triplet  (x,y,theta) et utiliser la fonction "motion_optimal" ci dessus pour obtenir les (u,v) optimaux correspondant
 
 
-# Entrainement d'un réseau de neurone avec Pytorch 
+# Entrainement d'un modèle Pytorch 
 
-pytorch_model = train_network(input, output)
+pytorch_model = train_network(input, output, hyperparameters)
 
-# Conversion du réseau de neurone Pytorch au format csv attendu par le challenge
+où hyperparameters est la liste de paramètres d'entrainement pour le réseau de Neurone 
+
+# Enregistrement du modèle Pytorch au format csv
 
 registrer_to_csv(pytorch_model)
 
