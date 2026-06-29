@@ -5,8 +5,7 @@ import numpy as np
 
 from motion_optimal import motion_optimal
 
-
-def get_dataset_v1(N: int, K: float, u_bar: float, R: float) -> tuple[np.ndarray, np.ndarray]:
+def get_dataset_v1(N: int, K: float = 1, u_bar: float = 5, R: float= 10) -> tuple[np.ndarray, np.ndarray]:
     inputs = []
     outputs = []
     limit = 100
@@ -20,7 +19,7 @@ def get_dataset_v1(N: int, K: float, u_bar: float, R: float) -> tuple[np.ndarray
     return np.array(inputs, dtype=np.float32), np.array(outputs, dtype=np.float32)
 
 if __name__ == '__main__':
-    inputs, outputs = get_dataset_v1(10, 2, 2, 2)
+    inputs, outputs = get_dataset_v1(10)
     print(inputs.shape, inputs)
     print(outputs.shape, outputs)
 
