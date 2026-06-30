@@ -43,7 +43,7 @@ def main_train_network():
     inputs, outputs = get_dataset(N, K, u_bar, R)
     print('Dataset generated !')
     print('Start training pytorch model')
-    network_name = f'network_v{version}_{N}_{10 * K}_{10 * u_bar}_{R}_{epochs}'
+    network_name = f'network_v{version}_{N}_{K}_{u_bar}_{R}_{epochs}'
     train_network(inputs, outputs, epochs, lr, network_name, verbose=True)
     print('pytorch model trained !')
 
