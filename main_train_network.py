@@ -28,14 +28,14 @@ def train_network(inputs, outputs, epochs: int, lr: float, network_name: str, ve
 
 def main_train_network():
     # Dataset settings
-    N = 1_000_000
+    N = 8_000_000
     # N = 1_000
     version = 3
     K = 0.3
     u_bar = 0.5
     R = 10
     # Training settings
-    epochs = 10_000
+    epochs = 1_000
     lr = 0.005
     # Training of the network
     print('Start generating dataset')

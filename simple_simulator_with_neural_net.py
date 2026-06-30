@@ -72,12 +72,14 @@ if __name__ == '__main__':
     ax = init_figure(-25, 25, -25, 25)
     x0, y0, θ0, vx0, vy0, w0, w10, w20 = 20, 20, 1, 10, 0, 0, 1, 1
     x = np.array([[x0, y0, θ0, vx0, vy0, w0, w10, w20]]).T
-    dt = 0.01
+    dt = 0.05
 
     R = 10
     K, u_bar = 4, 20
     # neural_net = NeuralNetwork("models/network_v3_1000000_4_20_10_10000.csv")
-    neural_net = NeuralNetwork("models/network_v3_1000000_0.3_0.5_10_10000.csv")
+    neural_net = NeuralNetwork("models/network_v3_2000000_3.0_5.0_10_5000.csv")
+    # neural_net = NeuralNetwork("models/network_v3_4000000_3.0_5.0_10_2000.csv")
+    # neural_net = NeuralNetwork("models/network_v3_8000000_3.0_5.0_10_1000.csv")
     for t in np.arange(0, 50, dt):
         clear(ax)
         draw_vector_field(-25,25,-25,25,R)
